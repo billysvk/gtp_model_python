@@ -1,0 +1,94 @@
+ *pre-trained detector model
+https://github.com/openai/gpt-2-output-dataset/blob/master/detector/README.md
+https://github.com/openai/gpt-2-output-dataset/blob/master/detector/README.md
+
+DONT FORGET TO INSTALL MINICONDA :https://www.tensorflow.org/install/pip#windows-native_1
+
+pip install PyPDF2
+
+pip install gpt_2_simple
+
+G:\Other computers\HomePC\py_projects\dummy\astro.pdf
+
+C:\Users\VasilisSavvakis\Desktop\astro.pdf
+
+C:\Users\VasilisSavvakis\Desktop\test.pdf
+
+pip install langchain openai chromadb tiktoken unstructured
+
+# Install dependencies from requirements.txt
+pip install -r requirements.txt
+
+----------------------------------------------------------------
+working example=>
+----------------------https://github.com/minimaxir/gpt-2-simple
+(Python package to easily retrain OpenAI's GPT-2 text-generating model on new texts.)
+https://pypi.org/project/gpt-2-simple/
+
+
+The generated model checkpoints are by default in /checkpoint/run1. If you want to load a model from that folder and generate text from it:
+
+import gpt_2_simple as gpt2
+
+sess = gpt2.start_tf_sess()
+gpt2.load_gpt2(sess)
+
+gpt2.generate(sess)
+As with textgenrnn, you can generate and save text for later use (e.g. an API or a bot) by using the return_as_list parameter.
+
+single_text = gpt2.generate(sess, return_as_list=True)[0]
+print(single_text)
+You can pass a run_name parameter to finetune and load_gpt2 if you want to store/load multiple models in a checkpoint folder.
+
+---------------------
+***resume training of a checkpoint
+
+import gpt_2_simple as gpt2
+
+# Start a new TensorFlow session
+sess = gpt2.start_tf_sess()
+
+# Load a specific model checkpoint
+gpt2.load_gpt2(sess, model_name="124M", checkpoint_dir="checkpoint")
+
+# Resume training
+gpt2.finetune(sess, "additional_text_data.txt", model_name="124M", steps=1000)
+
+*** Generate Text:
+You can use a checkpoint to generate text with the pre-trained or fine-tuned model. This is useful for creative writing, content generation, or other applications where you want the model to produce text.
+
+import gpt_2_simple as gpt2
+
+# Start a new TensorFlow session
+sess = gpt2.start_tf_sess()
+
+# Load a specific model checkpoint
+gpt2.load_gpt2(sess, model_name="124M", checkpoint_dir="checkpoint")
+
+# Generate text
+generated_text = gpt2.generate(sess)
+print(generated_text)
+
+
+***Load the Pre-trained Model: FOR A CHAT-BOT
+
+Yes, using a pre-trained language model like GPT-2 for a chatbot is feasible and can be relatively straightforward. Here are the general steps you can follow:
+
+Load the Pre-trained Model:
+Load the pre-trained GPT-2 model using a library like gpt_2_simple. This library simplifies the process of working with GPT-2 and provides functions for loading, fine-tuning, and generating text.
+
+
+import gpt_2_simple as gpt2
+
+# Start a new TensorFlow session
+sess = gpt2.start_tf_sess()
+
+# Load the pre-trained GPT-2 model
+gpt2.load_gpt2(sess, model_name="124M")
+
+--------------------tensorflow
+
+https://www.tensorflow.org/install/pip#windows-native_1
+
+
+https://cefasgpereira.medium.com/chat-gpt-lests-develop-our-own-artificial-intelligence-chatbot-3daf5ff4d6bf
