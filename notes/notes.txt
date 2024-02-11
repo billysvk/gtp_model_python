@@ -92,3 +92,11 @@ https://www.tensorflow.org/install/pip#windows-native_1
 
 
 https://cefasgpereira.medium.com/chat-gpt-lests-develop-our-own-artificial-intelligence-chatbot-3daf5ff4d6bf
+
+-----problems
+textract 1.6.5 requires extract-msg<=0.29.*, but you have extract-msg 0.47.0 which is incompatible.
+
+pip install beautifulsoup4==4.8.0
+pip install extract-msg==0.22.0
+
+pip install torch -> remove miniconda3 folder from c/user/xxx/ and then pip install torch

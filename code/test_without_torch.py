@@ -18,16 +18,16 @@ def extract_text_from_pdf(pdf_path):
 # knowledge_text = extract_text_from_pdf(pdf_path)
 # knowledge_text = "My name is Vasileios"
 
-model_name = "124M"  # You can also try "355M" for a larger model
+model_name = "355M"  # You can also try "355M" for a larger model
 # model_folder = os.path.join("models", model_name)
 model_folder = os.path.join("models", model_name)
 # Fine-tune GPT-2 on the knowledge text
 # Check if the GPT-2 model checkpoint for the specified model_name exists
-# if not os.path.exists(model_folder):
+if not os.path.exists(model_folder):
 #     # If not, download the GPT-2 model
-#     gpt2.download_gpt2(model_name=model_name)
-# else:
-#     print(f"GPT-2 model {model_name} is already downloaded.")
+     gpt2.download_gpt2(model_name=model_name)
+else:
+     print(f"GPT-2 model {model_name} is already downloaded.")
 # sess = gpt2.start_tf_sess()  # Start a new TensorFlow session
 # gpt2.reset_session(sess)  # Reset the TensorFlow session
 # sess = gpt2.start_tf_sess()  # Use GPU if available
