@@ -2,7 +2,7 @@ import os
 import random
 import torch
 from transformers import GPT2Tokenizer, GPT2LMHeadModel, AdamW, get_linear_schedule_with_warmup
-
+import shutil
 # better train ;)
 def train_model():
     # Set random seed for reproducibility
@@ -26,7 +26,7 @@ def train_model():
 
     # Set training parameters
     train_batch_size = 4
-    num_train_epochs = 500  # Increase number of epochs
+    num_train_epochs = 10  # Increase number of epochs
     learning_rate = 3e-5   # Adjust learning rate
 
     # Initialize optimizer and scheduler
@@ -166,7 +166,7 @@ def generate_text(prompt):
     #                              )
     
 
-    temperature = 0.1 # Adjust as needed (higher values for more diversity)
+    temperature = 0.7 # Adjust as needed (higher values for more diversity)
     top_k = 50        # Adjust as needed (lower values for more diversity)
     top_p = 0.9       # Adjust as needed (lower values for more diversity)
 
@@ -188,6 +188,9 @@ def generate_text(prompt):
 def main():
     # Train the model (only run this once)
     if not os.path.exists('./models1/'):
+        train_model()
+    else:   
+        shutil.rmtree('./models1/')
         train_model()
 
     # Generate text based on user prompt
