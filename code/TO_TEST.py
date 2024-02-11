@@ -166,7 +166,7 @@ def generate_text(prompt):
     #                              )
     
 
-    temperature = 0.5  # Adjust as needed (higher values for more diversity)
+    temperature = 0.1 # Adjust as needed (higher values for more diversity)
     top_k = 50        # Adjust as needed (lower values for more diversity)
     top_p = 0.9       # Adjust as needed (lower values for more diversity)
 

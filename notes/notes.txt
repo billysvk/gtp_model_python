@@ -106,3 +106,5 @@ npm install touch-cli -g
 
 
 https://github.com/huggingface/trl/blob/main/examples/scripts/sft.py
+
+https://discuss.huggingface.co/t/fine-tuning-gpt2-for-question-answering/31895
