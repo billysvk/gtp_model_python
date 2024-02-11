@@ -4,16 +4,13 @@
 #example code for a text generation app using the Hugging Face transformers library and the GPT-2 model:
 # from transformers import GPT2Tokenizer, TFGPT2LMHeadModel
 import tensorflow as tf
-from transformers import AutoTokenizer, TFAutoModelForCausalLM
-
-
-
-# Example usage
-tokenizer = AutoTokenizer.from_pretrained("openai-community/openai-gpt")
-model = TFAutoModelForCausalLM.from_pretrained("openai-community/openai-gpt")
+from transformers import GPT2Tokenizer, GPT2Model
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+tokenizer.default_chat_template
+model = GPT2Model.from_pretrained('gpt2')
 # Set the device to GPU if available
 device = "cuda" if tf.test.is_gpu_available() else "cpu"
-model = model.to(device)
+# model = model.to(device)
 
 # Function to generate text
 def generate_text(prompt, max_length=100, temperature=0.7):

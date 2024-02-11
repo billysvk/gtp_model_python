@@ -103,3 +103,6 @@ pip install torch -> remove miniconda3 folder from c/user/xxx/ and then pip inst
 
 
 npm install touch-cli -g
+
+
+https://github.com/huggingface/trl/blob/main/examples/scripts/sft.py
