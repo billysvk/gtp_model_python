@@ -100,3 +100,6 @@ pip install beautifulsoup4==4.8.0
 pip install extract-msg==0.22.0
 
 pip install torch -> remove miniconda3 folder from c/user/xxx/ and then pip install torch
+
+
+npm install touch-cli -g
